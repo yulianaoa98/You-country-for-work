@@ -12,7 +12,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            height: 100vh;
             margin: 0;
             text-align: center;
             padding: 20px;
@@ -40,20 +40,12 @@
         }
         .btn:hover { background-color: #2980b9; }
         .result-box {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: bold;
             color: #27ae60;
-            margin-top: 15px;
-        }
-        .desc { font-size: 16px; font-weight: normal; color: #555; margin-top: 15px; line-height: 1.5; }
-        .result-image {
-            width: 100%;
-            border-radius: 12px;
             margin-top: 20px;
-            max-height: 280px;
-            object-fit: cover;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+        .desc { font-size: 16px; font-weight: normal; color: #555; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -96,28 +88,11 @@
         }
     ];
 
-    // Тут прописані короткі назви твоїх файлів
     const results = {
-        A: { 
-            country: "THE USA 🇺🇸 (The Hustler)", 
-            desc: "Fast pace, big goals, and a lot of overtime!", 
-            img: "4.avif" 
-        },
-        B: { 
-            country: "UKRAINE 🇺🇦 (The Homebody)", 
-            desc: "Comfort, familiar culture, and warm relationships.", 
-            img: "1.avif" 
-        },
-        C: { 
-            country: "CHINA 🇨🇳 (The Tech Genius)", 
-            desc: "Futuristic innovations, AI, and smart gadgets.", 
-            img: "3.avif" 
-        },
-        D: { 
-            country: "VIETNAM 🇻🇳 (The IT & Pet Lover)", 
-            desc: "Coding, warm weather, and furry friends everywhere!", 
-            img: "2.avif" 
-        }
+        A: { country: "THE USA 🇺🇸 (The Hustler)", desc: "Fast pace, big goals, and a lot of overtime!" },
+        B: { country: "UKRAINE 🇺🇦 (The Homebody)", desc: "Comfort, familiar culture, and warm relationships." },
+        C: { country: "CHINA 🇨🇳 (The Tech Genius)", desc: "Futuristic innovations, AI, and smart gadgets." },
+        D: { country: "VIETNAM 🇻🇳 (The IT & Pet Lover)", desc: "Coding, warm weather, and furry friends everywhere!" }
     };
 
     let currentQuestion = 0;
@@ -164,10 +139,8 @@
 
         let res = results[finalChoice];
         document.getElementById("question").innerText = "Your Perfect Destination is:";
-        
         document.getElementById("answers").innerHTML = `
             <div class="result-box">${res.country}</div>
-            <img src="${res.img}" class="result-image" alt="Country Result">
             <div class="desc">${res.desc}</div>
             <button class="btn" style="margin-top: 30px; background-color: #95a5a6;" onclick="startQuiz()">Take Test Again</button>
         `;
